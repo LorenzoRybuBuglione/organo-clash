@@ -1,0 +1,28 @@
+.footer {
+  background-color: #6278f7;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 75px;
+}
+
+.footer ul li {
+  display: inline-block;
+  margin-right: 32px;
+}
+.footer ul li:last-child {
+  margin-right: 0;
+}
+
+.footer p {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 24px;
+  display: flex;
+  align-items: center;
+  text-align: right;
+
+  color: #ffffff;
+}
