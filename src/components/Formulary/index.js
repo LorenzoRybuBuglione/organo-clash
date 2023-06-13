@@ -6,56 +6,57 @@ import "./Formulary.css";
 
 const Formulary = (props) => {
   const [name, setName] = useState("");
+  const [nick, setNick] = useState("");
   const [role, setRole] = useState("");
-  const [image, setImage] = useState("");
-  const [team, setTeam] = useState("");
+  const [rank, setRank] = useState("");
 
   const onCreate = (event) => {
     event.preventDefault();
     props.onCreateCard({
       name,
+      nick,
       role,
-      image,
-      team,
+      rank,
     });
     setName("");
     setRole("");
-    setImage("");
-    setTeam("");
+    setNick("");
+    setRank("");
   };
 
   return (
     <section className="formulary">
       <form onSubmit={onCreate}>
-        <h2>Preencha os dados para criar o card do colaborador.</h2>
+        <h2>Preencha os dados para criar o card do jogador.</h2>
         <LabelInput
           value={name}
           onTyping={(value) => setName(value)}
-          label="Nome"
-          placeholder="Digite o seu nome"
+          label="Nome e Sobrenome"
+          placeholder="Digite o seu nome e sobrenome"
           required
         />
         <LabelInput
-          valor={role}
-          onTyping={(value) => setRole(value)}
-          label="Cargo"
-          placeholder="Digite o seu cargo"
+          value={nick}
+          onTyping={(value) => setNick(value)}
+          label="Apelido"
+          placeholder="Digite o seu apelido"
           required
-        />
-        <LabelInput
-          value={image}
-          onTyping={(value) => setImage(value)}
-          label="Imagem"
-          placeholder="Informe o endereço da imagem"
         />
         <DropdownDropdown
-          value={team}
-          onChange={(value) => setTeam(value)}
-          label="Time"
-          items={props.teamNames}
+          value={role}
+          onChange={(value) => setRole(value)}
+          label="Posição"
+          items={props.roleNames}
           required
         />
-        <Button>Criar Card</Button>
+        <DropdownDropdown
+          value={rank}
+          onChange={(value) => setRank(value)}
+          label="Ranking"
+          items={props.rankNames}
+          required
+        />
+        <Button>Adicionar Jogador</Button>
       </form>
     </section>
   );

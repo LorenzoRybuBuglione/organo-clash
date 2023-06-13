@@ -1,0 +1,18 @@
+.role {
+  text-align: center;
+  padding: 32px;
+}
+
+.role h3 {
+  font-size: 32px;
+  border-bottom: 4px solid;
+  padding-bottom: 8px;
+  display: inline-block;
+}
+
+.role .players {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-top: 32px;
+}

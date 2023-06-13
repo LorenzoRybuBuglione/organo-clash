@@ -1,26 +1,26 @@
-.worker {
+.player {
     width: 280px;
 }
 
-.worker .header {
+.player .header {
+    height: 80px;
     border-radius: 10px 10px 0px 0px;
 }
-.worker img {
-    width: 100px;
-    border-radius: 50%;
+.player img {
+    width: 150px;
     position: relative;
-    bottom: -50px;
+    bottom: 10px;
 }
 
-.worker .cardFooter {
+.player .cardFooter {
     background: #FFFFFF;
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.08);
     border-radius: 0px 0px 10px 10px;
-    padding-top: 90px;
-    padding-bottom: 40px;
+    padding-top: 20px;
+    padding-bottom: 100px;
 }
 
-.worker .cardFooter h4 {
+.player .cardFooter h4 {
     color: #6278F7;
     font-size: 18px;
     line-height: 22px;
@@ -28,7 +28,7 @@
     margin-bottom: 8px;
 }
 
-.worker .cardFooter h5 {
+.player .cardFooter h5 {
     font-size: 18px;
     line-height: 22px;
     color: #212121;
