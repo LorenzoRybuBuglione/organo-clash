@@ -3,6 +3,7 @@ import Banner from "./components/Banner";
 import Footer from "./components/Footer";
 import Formulary from "./components/Formulary";
 import Role from "./components/Role";
+import champions from "./json/champions.json";
 
 function App() {
   const roles = [
@@ -40,6 +41,8 @@ function App() {
         onCreateCard={(newPlayer) => onAddPlayer(newPlayer)}
         roleNames={roles.map((role) => role.name)}
         rankNames={ranks.map((rank) => rank.name)}
+        champions={champions}
+        // champions={champions.map((champion) => champion.name)}
       />
       {roles.map((role) => (
         <Role

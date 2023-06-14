@@ -18,6 +18,7 @@ const Role = (props) => {
               nick={player.nick}
               // rank={player.rank}
               icon={player.icon}
+              favorite={player.favorite}
               bgColor={props.primaryColor}
             />
           ))}

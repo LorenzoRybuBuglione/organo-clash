@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "name": "Caitlyn",
+    "role": ["Atirador"],
+    "image": "/images/champions/Caitlyn_0.jpg"
+  },
+  {
+    "id": 2,
+    "name": "Zeri",
+    "role": ["Atirador"],
+    "image": "/images/champions/Zeri_0.jpg"
+  },
+  {
+    "id": 3,
+    "name": "Sejuani",
+    "role": ["Topo", "Selva"],
+    "image": "/images/champions/Sejuani_0.jpg"
+  },
+  {
+    "id": 4,
+    "name": "Zac",
+    "role": ["Selva"],
+    "image": "/images/champions/Zac_0.jpg"
+  },
+  {
+    "id": 5,
+    "name": "Riven",
+    "role": ["Topo"],
+    "image": "/images/champions/Riven_0.jpg"
+  },
+  {
+    "id": 6,
+    "name": "Mordekaiser",
+    "role": ["Topo"],
+    "image": "/images/champions/Mordekaiser_0.jpg"
+  },
+  {
+    "id": 7,
+    "name": "Yasuo",
+    "role": ["Topo", "Meio"],
+    "image": "/images/champions/Yasuo_0.jpg"
+  },
+  {
+    "id": 8,
+    "name": "Ahri",
+    "role": ["Meio"],
+    "image": "/images/champions/Ahri_0.jpg"
+  },
+  {
+    "id": 9,
+    "name": "Milio",
+    "role": ["Suporte"],
+    "image": "/images/champions/Milio_0.jpg"
+  },
+  {
+    "id": 10,
+    "name": "Nautilus",
+    "role": ["Meio", "Suporte"],
+    "image": "/images/champions/Nautilus_0.jpg"
+  }
+]

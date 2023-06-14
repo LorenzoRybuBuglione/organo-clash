@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import LabelInput from "../LabelInput";
 import DropdownDropdown from "../Dropdown";
 import Button from "../Button";
@@ -9,6 +9,20 @@ const Formulary = (props) => {
   const [nick, setNick] = useState("");
   const [role, setRole] = useState("");
   const [rank, setRank] = useState("");
+  const [favorite, setFavorite] = useState("");
+
+  const [championsNames, setChampionsNames] = useState([]);
+
+  useEffect(() => {
+    if (role !== "") {
+      let roleChampions = props.champions.filter(
+        (champion) => (champion.role.includes(role))
+      );
+      setChampionsNames(roleChampions.map((champion) => champion.name));
+    } else {
+      setChampionsNames(props.champions.map((champion) => champion.name));
+    }
+  }, [props.champions, role]);
 
   const onCreate = (event) => {
     event.preventDefault();
@@ -17,11 +31,13 @@ const Formulary = (props) => {
       nick,
       role,
       rank,
+      favorite,
     });
     setName("");
     setRole("");
     setNick("");
     setRank("");
+    setFavorite("");
   };
 
   return (
@@ -54,6 +70,16 @@ const Formulary = (props) => {
           onChange={(value) => setRank(value)}
           label="Ranking"
           items={props.rankNames}
+          required
+        />
+        <DropdownDropdown
+          value={favorite}
+          onChange={(value) => setFavorite(value)}
+          label="Campeão favorito"
+          items={
+            // role === "" ?
+            championsNames
+          }
           required
         />
         <Button>Adicionar Jogador</Button>

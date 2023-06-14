@@ -14,6 +14,7 @@ const PlayerCard = (props) => {
       </div>
       <div className="cardFooter">
         <h4>{firstName} "{props.nick}" {lastName}</h4>
+        <img src={`/images/champions/${props.favorite}_0.jpg`} alt={props.favorite}/>
       </div>
     </div>
   );
