@@ -39,6 +39,10 @@ const Formulary = (props) => {
       rank,
       favorite,
     });
+    CleanUp();
+  };
+
+  const CleanUp = () => {
     setName("");
     setNick("");
     setRank("");
