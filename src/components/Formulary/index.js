@@ -9,7 +9,12 @@ const Formulary = (props) => {
   const [nick, setNick] = useState("");
   const [rank, setRank] = useState("");
   const [role, setRole] = useState("");
-  const [favorite, setFavorite] = useState({});
+  const [favorite, setFavorite] = useState({
+    id: "",
+    name: "",
+    role: "",
+    image: "",
+  });
 
   const [championsNames, setChampionsNames] = useState([]);
 
@@ -26,7 +31,7 @@ const Formulary = (props) => {
 
   const onCreate = (event) => {
     event.preventDefault();
-    console.log(favorite)
+    console.log(favorite);
     props.onCreateCard({
       name,
       nick,
@@ -38,7 +43,12 @@ const Formulary = (props) => {
     setNick("");
     setRank("");
     setRole("");
-    setFavorite({});
+    setFavorite({
+      id: "",
+      name: "",
+      role: "",
+      image: "",
+    });
   };
 
   return (
