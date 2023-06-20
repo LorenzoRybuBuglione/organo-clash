@@ -7,16 +7,16 @@ import "./Formulary.css";
 const Formulary = (props) => {
   const [name, setName] = useState("");
   const [nick, setNick] = useState("");
-  const [role, setRole] = useState("");
   const [rank, setRank] = useState("");
-  const [favorite, setFavorite] = useState("");
+  const [role, setRole] = useState("");
+  const [favorite, setFavorite] = useState({});
 
   const [championsNames, setChampionsNames] = useState([]);
 
   useEffect(() => {
     if (role !== "") {
-      let roleChampions = props.champions.filter(
-        (champion) => (champion.role.includes(role))
+      let roleChampions = props.champions.filter((champion) =>
+        champion.role.includes(role)
       );
       setChampionsNames(roleChampions.map((champion) => champion.name));
     } else {
@@ -26,6 +26,7 @@ const Formulary = (props) => {
 
   const onCreate = (event) => {
     event.preventDefault();
+    console.log(favorite)
     props.onCreateCard({
       name,
       nick,
@@ -34,10 +35,10 @@ const Formulary = (props) => {
       favorite,
     });
     setName("");
-    setRole("");
     setNick("");
     setRank("");
-    setFavorite("");
+    setRole("");
+    setFavorite({});
   };
 
   return (
@@ -59,13 +60,6 @@ const Formulary = (props) => {
           required
         />
         <DropdownDropdown
-          value={role}
-          onChange={(value) => setRole(value)}
-          label="Posição"
-          items={props.roleNames}
-          required
-        />
-        <DropdownDropdown
           value={rank}
           onChange={(value) => setRank(value)}
           label="Ranking"
@@ -73,8 +67,19 @@ const Formulary = (props) => {
           required
         />
         <DropdownDropdown
-          value={favorite}
-          onChange={(value) => setFavorite(value)}
+          value={role}
+          onChange={(value) => setRole(value)}
+          label="Posição"
+          items={props.roleNames}
+          required
+        />
+        <DropdownDropdown
+          value={favorite.name}
+          onChange={(value) => {
+            setFavorite(
+              props.champions.find((champion) => champion.name === value)
+            );
+          }}
           label="Campeão favorito"
           items={
             // role === "" ?
